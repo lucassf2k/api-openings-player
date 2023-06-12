@@ -1,5 +1,5 @@
 import express from "express"
-import { routes } from "@/infra/routes"
+import { routes } from "@/infra/express/routes"
 import { postgresDataSource } from "@/infra/database/app-data-source"
 
 function application(): void {
