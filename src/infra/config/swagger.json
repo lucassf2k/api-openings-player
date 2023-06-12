@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Openings Player Documentation",
+    "description": "This is an API Openings Player",
+    "version": "1.0.0",
+    "contact": {
+      "email": "lucassilved@gmail.com"
+    }
+  }
+}
