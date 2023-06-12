@@ -9,6 +9,7 @@
     "start:dev": "nodemon --watch 'src' --exec 'ts-node -r tsconfig-paths/register src/application.ts' -e ts",
     "test": "jest --passWithNoTests",
     "test:watch": "yarn test --watch",
+    "typeorm": "npx ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli",
     "husky:prepare": "husky install"
   },
   "license": "MIT",
