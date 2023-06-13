@@ -24,4 +24,8 @@ export class CategoriesRepository implements ICategoriesRepository {
       },
     })
   }
+
+  async findAll(): Promise<Category[]> {
+    return await this.categoriesRepository.find()
+  }
 }
