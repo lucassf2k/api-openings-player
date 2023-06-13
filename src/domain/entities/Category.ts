@@ -9,16 +9,16 @@ import {
 @Entity("categories")
 export class Category {
   @PrimaryGeneratedColumn("uuid")
-  id?: string
+  private id?: string
 
   @Column()
   name?: string
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: "created_at" })
   createdAt?: Date
 
   constructor() {
-    if (this.id) {
+    if (!this.id) {
       this.id = randomUUID()
     }
   }
