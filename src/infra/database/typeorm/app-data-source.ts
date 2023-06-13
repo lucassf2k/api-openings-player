@@ -7,6 +7,6 @@ export const postgresDataSource = new DataSource({
   username: "openings",
   password: "@openings",
   database: "openingsdb",
-  entities: [],
-  migrations: [],
+  entities: ["src/domain/entities/*.ts"],
+  migrations: ["src/infra/database/typeorm/migrations/*.ts"],
 })
