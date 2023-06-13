@@ -1,8 +1,10 @@
+import "reflect-metadata"
+import "express-async-errors"
 import express from "express"
 import swaggerUi from "swagger-ui-express"
 import { routes } from "@/infra/express/routes"
 import { postgresDataSource } from "@/infra/database/typeorm/app-data-source"
-import { errorHandler } from "@/infra/express/middlewares/error-handler"
+import { errorHandler } from "@/infra/express/middlewares/errorHandler"
 import swaggerFile from "@/infra/config/swagger.json"
 
 function application(): void {
