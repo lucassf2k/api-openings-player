@@ -9,7 +9,7 @@ import {
 @Entity("categories")
 export class Category {
   @PrimaryGeneratedColumn("uuid")
-  private id?: string
+  id?: string
 
   @Column()
   name?: string
