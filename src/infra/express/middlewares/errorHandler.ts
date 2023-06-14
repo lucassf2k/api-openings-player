@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express"
-import { AppError } from "@/infra/errors/app-error"
+import { AppError } from "@/infra/errors/AppError"
 
 export function errorHandler(
   err: Error,

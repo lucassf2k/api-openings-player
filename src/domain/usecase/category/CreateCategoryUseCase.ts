@@ -1,6 +1,6 @@
 import { Category } from "@/domain/entities/Category"
 import { ICategoriesRepository } from "@/domain/repositories/interfaces/ICategoriesRepository"
-import { AppError } from "@/infra/errors/app-error"
+import { AppError } from "@/infra/errors/AppError"
 
 interface IRequest {
   name: string
