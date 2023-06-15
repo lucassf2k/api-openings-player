@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import { CreateCategoryUseCase } from "@/domain/usecase/category/CreateCategoryUseCase"
-import { TypeormCategoriesRepository } from "@/domain/repositories/typeorm/TypeormCategoriesRepository"
+import { TypeormCategoriesRepository } from "@/infra/database/typeorm/repositories/TypeormCategoriesRepository"
 
 export class CreateCategoryController {
   async handler(request: Request, response: Response): Promise<Response> {

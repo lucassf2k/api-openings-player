@@ -2,7 +2,7 @@ import { Repository } from "typeorm"
 import { Category } from "@/domain/entities/Category"
 import { postgresDataSource } from "@/infra/database/typeorm/app-data-source"
 import { ICreateCategoryDTO } from "@/application/dtos/ICreateCategory"
-import { ICategoriesRepository } from "../ICategoriesRepository"
+import { ICategoriesRepository } from "@/domain/repositories/ICategoriesRepository"
 
 export class TypeormCategoriesRepository implements ICategoriesRepository {
   private categoriesRepository: Repository<Category>
