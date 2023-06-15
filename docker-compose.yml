@@ -3,7 +3,7 @@ services:
   database_openings:
     image: postgres
     container_name: database_openings
-    restart: always
+    restart: unless-stopped
     ports:
       - 5432:5432
     environment:
