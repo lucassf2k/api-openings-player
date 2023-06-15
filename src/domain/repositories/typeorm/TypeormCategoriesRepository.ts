@@ -2,8 +2,9 @@ import { Repository } from "typeorm"
 import { Category } from "@/domain/entities/Category"
 import { postgresDataSource } from "@/infra/database/typeorm/app-data-source"
 import { ICreateCategoryDTO } from "@/application/dtos/ICreateCategory"
+import { ICategoriesRepository } from "../ICategoriesRepository"
 
-export class TypeormCategoriesRepository {
+export class TypeormCategoriesRepository implements ICategoriesRepository {
   private categoriesRepository: Repository<Category>
 
   constructor() {
