@@ -4,7 +4,7 @@ import { postgresDataSource } from "@/infra/database/typeorm/app-data-source"
 import { ICreateCategoryDTO } from "@/application/dtos/ICreateCategory"
 import { ICategoriesRepository } from "@/domain/repositories/ICategoriesRepository"
 
-export class TypeormCategoriesRepository implements ICategoriesRepository {
+class TypeormCategoriesRepository implements ICategoriesRepository {
   private categoriesRepository: Repository<Category>
 
   constructor() {
@@ -28,4 +28,14 @@ export class TypeormCategoriesRepository implements ICategoriesRepository {
   async findAll(): Promise<Category[]> {
     return await this.categoriesRepository.find()
   }
+
+  async findById(id: string): Promise<Category | null> {
+    return this.categoriesRepository.findOne({ where: { id } })
+  }
+
+  async update(category: Category): Promise<Category> {
+    return this.categoriesRepository.save(category)
+  }
 }
+
+export const typeormCategoriesRepository = new TypeormCategoriesRepository()
