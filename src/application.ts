@@ -2,17 +2,13 @@ import "reflect-metadata"
 import "express-async-errors"
 import express from "express"
 import swaggerUi from "swagger-ui-express"
-import { routes } from "@/infra/express/routes"
-import { postgresDataSource } from "@/infra/database/typeorm/app-data-source"
-import { errorHandler } from "@/infra/express/middlewares/errorHandler"
 import swaggerFile from "@/infra/config/swagger.json"
+import { postgresDataSource } from "./infra/database/typeorm/app-data-source"
 
 function application(): void {
   const app = express()
   app.use(express.json())
   app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile))
-  app.use("/api", routes)
-  app.use(errorHandler)
   postgresDataSource
     .initialize()
     .then(() => {
